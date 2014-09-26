@@ -2,7 +2,7 @@
   height: auto;
   min-height: 100%;
   background: @grey;
-  background: radial-gradient(circle, #7CA7BF, @grey);
+  // background: radial-gradient(circle, #7CA7BF, @grey);
   // font-family: avenir, @font-family-sans-serif;
   text-rendering: optimizeLegibility;
   color: white;
@@ -155,12 +155,50 @@
     }
   }
 
+  .wizard-container {
+    .w-inner {
+      padding: 3rem 2rem;
+      background: @darkgrey;
+    }
+  }
+
   .events {
     h6 {
       margin-left: 1.5rem;
       font-size: 1.8rem;
       font-weight: 600;
       text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .event {
+      background: @grey;
+      h2, .fa {
+        display: block;
+        text-align: center;
+      }
+      p {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+      }
+      ol {
+        list-style: none;
+        padding: 0;
+        .fa {
+          display: inline-block;
+          margin: 0 1rem 0 0;
+          text-align: left;
+        }
+        li:nth-child(1) {
+          margin-left: 0.2em;
+        }
+      }
+      .btn-info {
+        width: 100%;
+        padding: 2rem;
+        margin-top: 3rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
     }
   }
 
