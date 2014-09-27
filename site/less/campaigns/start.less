@@ -13,77 +13,86 @@
   }
 
   h1 {
-    margin-bottom: 0.5rem;
+    margin: 2rem 0 0.5rem 1.5rem;
     font-size: 6rem;
     font-weight: 300;
     letter-spacing: -0.03rem;
   }
 
   p.subheadline {
+    margin: 0 0 1rem 1.5rem;
     max-width: 90rem;
     font-size: 1.6rem;
     font-weight: 300;
   }
 
-  form {
-    text-align: center;
+  fieldset[role="textbox"] {
+    padding: 0 0 5%;
   }
 
-  fieldset[role="textbox"] {
-    padding: 0 0 2%;
+  form {
+    margin: 3rem 0 0 0;
+    #submit-event {
+      margin-top: 1rem;
+    }
   }
 
   label {
-    color: @white;
-    display: block;
-    font-size: 3rem;
-    font-weight: 500;
-    padding: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
     text-transform: uppercase;
+    display: block;
   }
+
+  // select {
+  //   background: fadeout(@white, 60%);
+  //   border: 0.2rem solid transparent;
+  //   border-radius: 0;
+  //   height: 6rem;
+  //   padding: 1.6rem;
+  //   position: relative;
+  //   width: 50%;
+  //   &:focus, &:active {
+  //     outline: none;
+  //     border: 0.2rem solid @darkgreen;
+  //   }
+  // }
 
   select {
-    background: fadeout(@white, 60%);
-    border: 0.2rem solid transparent;
-    border-radius: 0;
-    height: 6rem;
-    padding: 1.6rem;
-    position: relative;
-    width: 50%;
-    &:focus, &:active {
-      outline: none;
-      border: 0.2rem solid @darkgreen;
+    color: rgba(0,0,0,0.4);
+    option {
+      color: #333;
     }
   }
 
-  input {
-    border: 0.2rem solid transparent;
-    line-height: 2.9;
-    min-width: 50%;
-    padding: 0.5rem;
-    &::-moz-placeholder, &::-webkit-input-placeholder, &:-ms-input-placeholder {
-      color: fadeout(@black, 40%);
-    }
-    &:focus, &:active {
-      outline: none;
-      border: 0.2rem solid @darkgreen;
-    }
+  // input {
+  //   border: 0.2rem solid transparent;
+  //   line-height: 2.9;
+  //   min-width: 50%;
+  //   padding: 0.5rem;
+  //   &::-moz-placeholder, &::-webkit-input-placeholder, &:-ms-input-placeholder {
+  //     color: fadeout(@black, 40%);
+  //   }
+  //   &:focus, &:active {
+  //     outline: none;
+  //     border: 0.2rem solid @darkgreen;
+  //   }
 
-    &[type="text"], &[type="number"], &#datepicker {
-      background-color: fadeout(@white, 60%);
-      color: @grey;
-    }
+  //   &[type="text"], &[type="number"], &#datepicker {
+  //     background-color: fadeout(@white, 60%);
+  //     color: @grey;
+  //   }
 
-    &[type="submit"] {
-      font-size: 2.2rem;
-      margin: 0 auto;
-      min-height: 4.2rem;
-      text-transform: uppercase;
-      &:focus, &:active {
-        border: 0.2rem solid @white;
-      }
-    }
-  }
+  //   &[type="submit"] {
+  //     font-size: 2.2rem;
+  //     margin: 0 auto;
+  //     min-height: 4.2rem;
+  //     text-transform: uppercase;
+  //     &:focus, &:active {
+  //       border: 0.2rem solid @white;
+  //     }
+  //   }
+  // }
 
   .error {
     border-color: @brand-danger;
@@ -131,7 +140,7 @@
 
   .datepicker {
     position: relative;
-    &::after {
+    &:after {
       .icon(@fa-calendar);
       color: black;
       font-size: 1.5em;
@@ -173,6 +182,16 @@
       font-size: 1.8rem;
       font-weight: 600;
       text-transform: uppercase;
+      &.selected {
+        margin: -3rem -2rem 2rem -2rem;
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-transform: none;
+        background: @lightgrey;
+        color: @darkgrey;
+      }
     }
     .event {
       background: @grey;
@@ -200,7 +219,7 @@
       }
       .btn-info {
         width: 100%;
-        padding: 2rem;
+        padding: 1.5rem 2rem;
         margin-top: 2rem;
         font-size: 1.8rem;
         font-weight: 600;
