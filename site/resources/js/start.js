@@ -73,7 +73,7 @@
       $context = $(this),
       formFields = {};
 
-    $('#submit-event').prop('disabled', false);
+    $('#submit-event').prop('disabled', true);
 
     $('input[name="beginDate"]').val(moment($('#datepicker').val(), 'MM/DD/YYYY h:mm A'));
 
@@ -184,12 +184,13 @@
     if ($('.start-page').length > 0) {
       setUpWizard();
       findaPlace();
-
+      $('#submit.event').prop('disabled', false);
       win.webmaker.auth.on('login', function () {
         $('#sign-in-form').hide();
         $('#start-event-submission').removeClass('hidden');
       });
     }
+
   }
 
   init();
