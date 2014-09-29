@@ -101,6 +101,10 @@
     }
   }
 
+  .form-control {
+    height: 4rem;
+  }
+
   .form-error {
     color: @brand-danger;
     background-color: fadeout(@white, 60%);
@@ -142,26 +146,11 @@
     position: relative;
     &:after {
       .icon(@fa-calendar);
-      color: black;
-      font-size: 1.5em;
+      color: @black;
+      font-size: 1.6rem;
       position: absolute;
-      z-index: -1;
-      bottom: 2rem;
-      right: 25%;
-      @media screen and (min-width: @screen-xs-min) {
-        right: 28%;
-      }
-      @media screen and (min-width: @screen-sm-min) {
-        bottom: 2.7rem;
-        right: 27.5%;
-      }
-      @media screen and (min-width: @screen-md-min) {
-        bottom: 3.1rem;
-        right: 27%;
-      }
-      @media screen and (min-width: @screen-lg-min) {
-        bottom: 3.6rem;
-      }
+      top: 3.3rem;
+      right: 1rem;
     }
   }
 
@@ -320,8 +309,10 @@
   }
 
   .day {
+    cursor: pointer;
     &.active {
-      background: @brand-primary;
+      background: @blue;
+      color: @white;
     }
   }
 }
