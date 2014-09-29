@@ -77,6 +77,8 @@
 
     $('input[name="beginDate"]').val(moment($('#datepicker').val(), 'MM/DD/YYYY h:mm A'));
 
+    $('#step-2').fadeOut('slow').next().delay(500).fadeIn('slow');
+
     if ($address.val() === '') {
       handleErrors();
       return false;
@@ -156,14 +158,26 @@
       win.webmaker.auth.login();
     });
 
-    $('button').on('click', function (e) {
+    $('.eventBtn').on('click', function (e) {
       e.preventDefault();
-      $('#start-event-submission').find('.fieldset.hidden').remove();
-      $('.step-2').removeClass('hidden');
+      var eventName = $('fieldset.hidden.' + e.target.id)
+                    .find('.event')[0]
+                    .innerHTML,
+          eventIcon = $('fieldset.hidden.' + e.target.id)
+                      .find('.icon')[0]
+                      .innerHTML,
+          eventDescription = $('fieldset.hidden.' + e.target.id)
+                            .find('.description')[0]
+                            .innerHTML;
+      console.log(e.target.id);
+      $('#step-1').fadeOut('slow').next().delay(500).fadeIn('slow');
       $('fieldset.hidden.' + e.target.id).appendTo('#start-event-submission');
+      $('.eventTitle').text(eventName);
+      $('.eventDescription').text(eventDescription);
+      $('.eventIcon').addClass(eventIcon);
     });
 
-    $('#start-event-submission').on('submit', submitForm);
+    $('#submit-event').on('click', submitForm);
   }
 
   function init() {
@@ -173,7 +187,7 @@
 
       win.webmaker.auth.on('login', function () {
         $('#sign-in-form').hide();
-        $('#start-event-submission').find('input[type="submit"]').removeAttr('disabled');
+        $('#start-event-submission').removeClass('hidden');
       });
     }
   }
