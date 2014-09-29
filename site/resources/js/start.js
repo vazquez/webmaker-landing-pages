@@ -77,8 +77,6 @@
 
     $('input[name="beginDate"]').val(moment($('#datepicker').val(), 'MM/DD/YYYY h:mm A'));
 
-    $('#step-2').fadeOut('slow').next().delay(500).fadeIn('slow');
-
     if ($address.val() === '') {
       handleErrors();
       return false;
@@ -88,6 +86,8 @@
       handleErrors();
       return false;
     }
+
+    $('#step-2').fadeOut('slow').next().delay(500).fadeIn('slow');
 
     $context.append('<input type="hidden" name="organizer" value="' + webmakerLogin().email + '" />');
     $context.append('<input type="hidden" name="organizerID" value="' + webmakerLogin().username + '" />');
@@ -160,21 +160,21 @@
 
     $('.eventBtn').on('click', function (e) {
       e.preventDefault();
-      var eventName = $('fieldset.hidden.' + e.target.id)
+      var $eventName = $('fieldset.hidden.' + e.target.id)
                     .find('.event')[0]
                     .innerHTML,
-          eventIcon = $('fieldset.hidden.' + e.target.id)
+          $eventIcon = $('fieldset.hidden.' + e.target.id)
                       .find('.icon')[0]
                       .innerHTML,
-          eventDescription = $('fieldset.hidden.' + e.target.id)
+          $eventDescription = $('fieldset.hidden.' + e.target.id)
                             .find('.description')[0]
                             .innerHTML;
       console.log(e.target.id);
       $('#step-1').fadeOut('slow').next().delay(500).fadeIn('slow');
       $('fieldset.hidden.' + e.target.id).appendTo('#start-event-submission');
-      $('.eventTitle').text(eventName);
-      $('.eventDescription').text(eventDescription);
-      $('.eventIcon').addClass(eventIcon);
+      $('.eventTitle').text($eventName);
+      $('.eventDescription').text($eventDescription);
+      $('.eventIcon').addClass($eventIcon);
     });
 
     $('#submit-event').on('click', submitForm);
