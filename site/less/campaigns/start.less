@@ -65,24 +65,6 @@
     height: 4rem;
   }
 
-  a[href="/auth/login"] {
-    border: 0.2rem solid transparent;
-    font-size: 2.2rem;
-    line-height: 2.9;
-    margin: 0 auto;
-    min-height: 4.2rem;
-    min-width: 50%;
-    padding: 0.5rem;
-    text-transform: uppercase;
-    &::-moz-placeholder, &::-webkit-input-placeholder, &:-ms-input-placeholder {
-      color: fadeout(@black, 40%);
-    }
-    &:focus, &:active {
-      outline: none;
-      border: 0.2rem solid @white;
-    }
-  }
-
   .datepicker {
     position: relative;
     &:after {
@@ -198,10 +180,7 @@
 }
 
 #sign-in-form {
-  a {
-    &::after {
-      .icon(@fa-var-chevron-right);
-      padding-left: 1rem;
-    }
+  .btn-info {
+    margin-top: 0.5rem;
   }
 }
