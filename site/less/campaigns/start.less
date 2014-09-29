@@ -172,7 +172,8 @@
       font-weight: 600;
       text-transform: uppercase;
       &.selected {
-        margin: -3rem -2rem 2rem -2rem;
+
+        margin: -3em -4rem 2rem -4rem;
         padding: 1rem;
         text-align: center;
         font-size: 1.4rem;
@@ -180,6 +181,9 @@
         text-transform: none;
         background: @lightgrey;
         color: @darkgrey;
+        @media screen and (min-width: @screen-md-min) {
+          margin: -3rem -2rem 2rem -2rem;
+        }
       }
     }
     .event {
