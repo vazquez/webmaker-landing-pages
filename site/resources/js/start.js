@@ -125,7 +125,7 @@
       contentType: 'application/json',
       error: function () {
         $('#start-event-submission').prepend(
-          '<p class="form-error">Something went wrong with the form submission. Please wait a moment and try again.</p>'
+          '<div class=" alert alert-danger">Something went wrong with the form submission. Please wait a moment and try again.</div>'
         );
         $('#submit-event').prop('disabled', false);
       },
