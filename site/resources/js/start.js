@@ -172,9 +172,9 @@
       console.log(e.target.id);
       $('#step-1').fadeOut('slow').next().delay(500).fadeIn('slow');
       $('fieldset.hidden.' + e.target.id).appendTo('#start-event-submission');
-      $('.eventTitle').text($eventName);
-      $('.eventDescription').text($eventDescription);
-      $('.eventIcon').addClass($eventIcon);
+      $('.event-title').text($eventName);
+      $('.event-description').text($eventDescription);
+      $('.event-icon').addClass($eventIcon);
     });
 
     $('#submit-event').on('click', submitForm);
