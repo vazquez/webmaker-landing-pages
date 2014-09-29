@@ -73,7 +73,7 @@
       $context = $(this),
       formFields = {};
 
-    $('#submit-event').prop('disabled', true);
+    $('#submit-event').prop('disabled', false);
 
     $('input[name="beginDate"]').val(moment($('#datepicker').val(), 'MM/DD/YYYY h:mm A'));
 
